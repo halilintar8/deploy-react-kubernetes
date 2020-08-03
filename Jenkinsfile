@@ -17,7 +17,7 @@ pipeline{
     stages{
         stage('Git'){
             steps{
-            // git branch: '${BRANCH}', credentialsId: 'bintang_lenovo', url: 'git@bitbucket.org:m_bintang/jenkins-demo.git'
+            /// git branch: '${BRANCH}', credentialsId: 'bintang_lenovo', url: 'git@bitbucket.org:m_bintang/jenkins-demo.git'
             git branch: '${BRANCH}', credentialsId: 'github_bintang', url: 'https://github.com/halilintar8/deploy-react-kubernetes.git'
             }
         }
