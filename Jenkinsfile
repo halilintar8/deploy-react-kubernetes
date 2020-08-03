@@ -30,6 +30,7 @@ pipeline{
                     // sh "npm run-script build"
                     // sh "npm run build"
                     sh "npm install"
+                    sh "npm i --package-lock-only"
                     sh "npm audit fix"
                     sh "yarn build"
                 }
