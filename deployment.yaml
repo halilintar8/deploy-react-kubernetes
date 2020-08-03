@@ -5,11 +5,13 @@ metadata:
   labels:
     app: app
 spec:
-  type: NodePort
+  # type: NodePort
+  type: LoadBalancer
   ports:
   - port: 3000
     name: http
-    nodePort: 30080
+    # nodePort: 30080
+    targetPort: 80
   selector:
     app: app
 ---
@@ -19,13 +21,18 @@ metadata:
   name: deploy-react-kubernetes-deployment
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: app
   template:
     metadata:
       labels:
         app: app
     spec:
       containers:
-      - name: deploy-react-kubernetes
-        image: registry.<ibm_cloud_region>.bluemix.net/<your_namespace>/deploy-react-kubernetes
-        ports:
-        - containerPort: 3000
+        - name: deploy-react-kubernetes
+          image: registry.<ibm_cloud_region>.bluemix.net/<your_namespace>/deploy-react-kubernetes
+          # PullPolicy: Always
+          ports:
+            - containerPort: 3000
+      # restartPolicy: Always
