@@ -2,7 +2,8 @@
   "name": "MovieFinder",
   "version": "0.0.1",
   "description": "React Redux application that calls the OMDb api to get information on a specific movie",
-  "repository": "git+https://github.com/IBM/deploy-react-kubernetes",
+  // "repository": "git+https://github.com/IBM/deploy-react-kubernetes",
+  "repository": "git+https://github.com/halilintar8/deploy-react-kubernetes",
   "license": "Apache-2.0",
   "devDependencies": {
     "babel-cli": "^6.26.0",

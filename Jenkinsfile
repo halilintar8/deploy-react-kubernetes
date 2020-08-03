@@ -27,8 +27,10 @@ pipeline{
                 echo 'Running build automation'         
                 container("npm-yarn") {
                     sh "npm run-script build"
+                    sh "npm run build"
+                    // sh "npm install"
                     // sh "npm audit fix"
-                    // sh "yarn build"
+                    sh "yarn build"
                 }
             }
         }
