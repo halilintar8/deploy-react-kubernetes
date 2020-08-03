@@ -34,7 +34,7 @@ spec:
         - name: deploy-react-kubernetes
           # image: registry.<ibm_cloud_region>.bluemix.net/<your_namespace>/deploy-react-kubernetes
           image: ${ORIGIN_REPO}/${REPO}:${IMAGE_TAG2}
-          PullPolicy: Always
+          imagePullPolicy: Always
           ports:
             - containerPort: 3000
       # restartPolicy: Always
