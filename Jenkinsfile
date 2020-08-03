@@ -26,6 +26,7 @@ pipeline{
             steps{
                 echo 'Running build automation'         
                 container("npm-yarn") {
+                    sh "npm cache clean"
                     sh "npm run-script build"
                     sh "npm run build"
                     // sh "npm install"
